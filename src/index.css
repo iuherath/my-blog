@@ -12,3 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.blog-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-container .blog-item{
+  background: yellow;
+  width: 30%;
+  padding: 20px;
+}
+
+.blog-container .blog-item .blog-title{
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+.blog-container .blog-item .blog-content{
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+.blog-container .blog-item .blog-links{
+  
+}
