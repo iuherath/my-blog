@@ -20,9 +20,10 @@ class Blogitem extends Component{
         // alert(`Blog title ${this._newText.value}`)
         // alert(`Blog content ${this._newTextContent.value}`)
         this.props.onChange(this._newTextTitle.value, this._newTextContent.value, this.props.index)
-        this.state = {
+        this.setState({
             editing: false
         }
+        )
         
     }
 
@@ -54,8 +55,8 @@ class Blogitem extends Component{
                 <h1 className="blog-title">{this.props.title}</h1>
                 <p className="blog-content">{this.props.content}</p>
                 <div className="blog-links">
-                    <a href="#" onClick={this.edit}><FaEdit /> Edit</a>
-                    <a href="#" onClick={this.remove}><FaTrash /> Remove</a>
+                    <button id="edit" onClick={this.edit}><FaEdit /> Edit</button>
+                    <button id="remove" onClick={this.remove}><FaTrash /> Remove</button>
                 </div>
             </div>
         )

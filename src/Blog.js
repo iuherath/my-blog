@@ -32,13 +32,17 @@ class Blog extends Component{
 
     update = (newTitle, newContent, id)=>{
         console.log(`update blogitem at ${id} Title: ${newTitle} Content: ${newContent}`)
+        
         this.setState(prevState => ({
-            blogPosts: prevState.blogPosts.map(blogitem => (
-                blogitem.id !== id ? blogitem : [
-                    ...blogitem, {blogTitle: newTitle, blogContent: newContent}
-                ]
-            ))
-        }))
+            blogPosts: prevState.blogPosts.map(
+                blogitem => blogitem.id !== id ? blogitem : {...blogitem, blogTitle: newTitle, blogContent: newContent}
+            )
+        }
+        ))
+
+        this.state.blogPosts.map(blog => (
+            console.log(blog)
+        ))
     }
 
     eachBlogPosts = (blogItem)=>{
