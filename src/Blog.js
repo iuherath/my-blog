@@ -30,16 +30,26 @@ class Blog extends Component{
         return this.uniqueId++
     }
 
+    update = (newTitle, newContent, id)=>{
+        console.log(`update blogitem at ${id} Title: ${newTitle} Content: ${newContent}`)
+        this.setState(prevState => ({
+            blogPosts: prevState.blogPosts.map(blogitem => (
+                blogitem.id !== id ? blogitem : {...blogitem, {blogTitle: newTitle, blogContent: newContent}}
+            ))
+        }))
+    }
+
     eachBlogPosts = (blogItem)=>{
         return(
             <Blogitem index={blogItem.id}
                       key={blogItem.id}
                       title={blogItem.blogTitle}
-                      content={blogItem.blogContent}>                      
-                      
+                      content={blogItem.blogContent}
+                      onChange={this.update}>
                       </Blogitem>
         )
     }
+
     render(){
         return(
             <div className="blog-container">

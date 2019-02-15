@@ -17,8 +17,12 @@ class Blogitem extends Component{
 
     save = (e)=>{
         e.preventDefault()
-        alert(`Blog title ${this._newText.value}`)
-        alert(`Blog content ${this._newTextContent.value}`)
+        // alert(`Blog title ${this._newText.value}`)
+        // alert(`Blog content ${this._newTextContent.value}`)
+        this.props.onChange(this._newTextTitle.value, this._newTextContent.value, this.props.index)
+        this.state = {
+            editing: false
+        }
         
     }
 
@@ -29,16 +33,16 @@ class Blogitem extends Component{
     renderBlogItemEdit = ()=> {
         return(
             <div className="blog-item">
-                <form>
+                <form onSubmit={this.save}>
                     <div className="input-text">
                         <label>Blog Title</label>
-                        <input type='text' ref={input =>this._newText = input}></input>
+                        <input type='text' ref={input =>this._newTextTitle = input}></input>
                     </div>
                     <div className="input-text">
                         <label>Blog content</label>
                         <textarea ref={content=> this._newTextContent = content}></textarea>    
                     </div>
-                    <button onClick={this.save}><FaSave />Save</button>
+                    <button id="save"><FaSave />Save</button>
                 </form>
         </div> 
         )
