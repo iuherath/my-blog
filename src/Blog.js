@@ -32,7 +32,7 @@ class Blog extends Component{
             .then(response => response.json())
             .then(json => json[0]
             .split('. ')
-            .forEach(sentense=> this.add(sentense.substring(0, 25))))
+            .forEach(sentense=> this.add(sentense.substring(0, 200))))
         }
     }
 
