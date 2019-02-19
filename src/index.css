@@ -13,15 +13,27 @@ code {
     monospace;
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+}
+
 .blog-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .blog-container .blog-item{
   background: yellow;
   width: 30%;
+  margin-right: 5%;
+  margin-bottom: 20px;
   padding: 20px;
+}
+
+.blog-container .blog-item:nth-child(3n){
+  margin-right: 0;
 }
 
 .blog-container .blog-item .blog-title{

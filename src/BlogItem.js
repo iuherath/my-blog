@@ -28,7 +28,7 @@ class Blogitem extends Component{
     }
 
     remove = (e)=>{
-        alert("removed")
+        this.props.onRemove(this.props.index)
     }
 
     renderBlogItemEdit = ()=> {
