@@ -62,7 +62,9 @@ class Blogitem extends Component{
                         <textarea ref={content=> this._newTextContent = content}
                                   defaultValue={this.props.content}></textarea>    
                     </div>
+                    <div className="blog-links">
                     <button id="save"><FaSave />Save</button>
+                    </div>
                 </form>
         </div> 
         )

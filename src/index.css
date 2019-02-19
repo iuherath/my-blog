@@ -50,14 +50,37 @@ code {
   font-size: 12px;
 }
 .blog-container .blog-item .blog-links{
-  margin-top: 20px
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 .blog-container .blog-item .blog-links button{
   border: none;
   background: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .blog-container .blog-item .blog-links button:hover{
   text-decoration: underline;
+}
+
+.blog-container .blog-item .blog-links button svg{
+  margin-right: 5px;
+}
+.blog-container .blog-item .input-text {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.blog-container .blog-item .input-text label{
+  width: 20%;
+}
+
+.blog-container .blog-item .input-text input,
+.blog-container .blog-item .input-text textarea{
+  padding: 10px;
+  width: 80%;
 }
