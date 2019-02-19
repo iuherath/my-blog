@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -25,11 +29,12 @@ code {
 }
 
 .blog-container .blog-item{
-  background: yellow;
-  width: 30%;
-  margin-right: 5%;
+  background: #f0f0f0;
+  width: 32.5%;
+  margin-right: 1%;
   margin-bottom: 20px;
   padding: 20px;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,.2);
 }
 
 .blog-container .blog-item:nth-child(3n){
@@ -45,5 +50,14 @@ code {
   font-size: 12px;
 }
 .blog-container .blog-item .blog-links{
-  
+  margin-top: 20px
+}
+.blog-container .blog-item .blog-links button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.blog-container .blog-item .blog-links button:hover{
+  text-decoration: underline;
 }
