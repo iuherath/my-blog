@@ -9,6 +9,22 @@ class Blogitem extends Component{
         }
     }
 
+    componentDidUpdate(){
+        if(this.state.editing){
+            let blogTitle
+            blogTitle= this._newTextTitle
+            blogTitle.focus()
+            blogTitle.select()
+
+            let blogContent
+            blogContent = this._newTextContent
+        }
+    }
+
+    shouldComponentUpdate(nextProps, NextState){
+        return(this.props.children !== nextProps.children || this.state !== NextState)
+    }
+
     edit = ()=>{
         this.setState({
             editing: true
@@ -37,11 +53,14 @@ class Blogitem extends Component{
                 <form onSubmit={this.save}>
                     <div className="input-text">
                         <label>Blog Title</label>
-                        <input type='text' ref={input =>this._newTextTitle = input}></input>
+                        <input type='text' 
+                               ref={input =>this._newTextTitle = input}
+                               defaultValue={this.props.title}></input>
                     </div>
                     <div className="input-text">
                         <label>Blog content</label>
-                        <textarea ref={content=> this._newTextContent = content}></textarea>    
+                        <textarea ref={content=> this._newTextContent = content}
+                                  defaultValue={this.props.content}></textarea>    
                     </div>
                     <button id="save"><FaSave />Save</button>
                 </form>
